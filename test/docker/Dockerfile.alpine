@@ -1,0 +1,16 @@
+FROM alpine:3.19
+
+RUN apk add --no-cache go git
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+RUN go mod download 2>/dev/null || true
+
+COPY . .
+
+RUN go build -o linuxsafe .
+
+COPY test/fixtures /tmp/test-fixtures
+
+CMD ["./test/docker/run-tests.sh"]

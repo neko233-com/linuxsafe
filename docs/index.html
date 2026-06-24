@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linuxsafe - Linux Security Agent</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+        .hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .install-box { background: #1e293b; color: #e2e8f0; padding: 20px; border-radius: 8px; font-family: monospace; margin: 30px 0; }
+        .install-box code { color: #22d3ee; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
+        .feature { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .feature h3 { color: #1e40af; margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        th { background: #f9fafb; }
+        .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; }
+        .badge-green { background: #dcfce7; color: #166534; }
+        .badge-blue { background: #dbeafe; color: #1e40af; }
+        footer { background: #f9fafb; padding: 40px 20px; text-align: center; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🐧 Linuxsafe</h1>
+        <p>Agent-first Linux security CLI. Automated threat detection, investigation, and remediation.</p>
+    </div>
+    
+    <div class="container">
+        <h2>Quick Install</h2>
+        <div class="install-box">
+            <code>curl -sSL https://raw.githubusercontent.com/neko233-com/linuxsafe/main/install.sh | bash</code>
+        </div>
+        
+        <h2>Usage</h2>
+        <div class="install-box">
+            <code>
+# Scan for threats<br>
+linuxsafe scan /<br><br>
+# Detect system threats<br>
+linuxsafe detect<br><br>
+# View hardware info<br>
+linuxsafe hw<br><br>
+# Generate report<br>
+linuxsafe report<br><br>
+# Check status<br>
+linuxsafe status
+            </code>
+        </div>
+        
+        <h2>Features</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>🔍 Threat Detection</h3>
+                <p>Scan files for malware, rootkits, and suspicious patterns. Hash-based detection with EICAR support.</p>
+            </div>
+            <div class="feature">
+                <h3>🕵️ Investigation</h3>
+                <p>Deep forensic analysis of processes, files, users, and network connections.</p>
+            </div>
+            <div class="feature">
+                <h3>🧹 Auto Cleanup</h3>
+                <p>Automated remediation with dry-run preview and force confirmation safety.</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Reports</h3>
+                <p>Generate JSON, HTML, or Markdown security reports with full findings.</p>
+            </div>
+            <div class="feature">
+                <h3>🖥️ Hardware Info</h3>
+                <p>System hardware detection: CPU, memory, disks, network interfaces.</p>
+            </div>
+            <div class="feature">
+                <h3>🤖 Agent-First</h3>
+                <p>JSON output by default. Deterministic exit codes for automation.</p>
+            </div>
+        </div>
+        
+        <h2>Supported Distributions</h2>
+        <table>
+            <tr><th>Distribution</th><th>Status</th><th>Package Manager</th></tr>
+            <tr><td>Ubuntu 20.04+</td><td><span class="badge badge-green">Tested</span></td><td>apt-get</td></tr>
+            <tr><td>Debian 11+</td><td><span class="badge badge-green">Tested</span></td><td>apt-get</td></tr>
+            <tr><td>CentOS Stream 9</td><td><span class="badge badge-green">Tested</span></td><td>yum</td></tr>
+            <tr><td>Alpine 3.18+</td><td><span class="badge badge-green">Tested</span></td><td>apk</td></tr>
+            <tr><td>RHEL 8+</td><td><span class="badge badge-blue">Compatible</span></td><td>yum</td></tr>
+            <tr><td>Fedora 38+</td><td><span class="badge badge-blue">Compatible</span></td><td>yum</td></tr>
+        </table>
+        
+        <h2>Exit Codes</h2>
+        <table>
+            <tr><th>Code</th><th>Meaning</th></tr>
+            <tr><td>0</td><td>Success / Clean</td></tr>
+            <tr><td>1</td><td>Threats found / Warnings</td></tr>
+            <tr><td>2</td><td>Scan error / Critical threats</td></tr>
+            <tr><td>3</td><td>Configuration error</td></tr>
+            <tr><td>4</td><td>Dangerous operation blocked</td></tr>
+        </table>
+    </div>
+    
+    <footer>
+        <p>Linuxsafe - Built for agents, ready for humans.</p>
+        <p><a href="https://github.com/neko233-com/linuxsafe">GitHub</a></p>
+    </footer>
+</body>
+</html>
